@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="EUC-KR">
+    <title>Insert title here</title>
+    <script language="JavaScript">
+        var result='';
+        function setCookie(name, value, expiredays) {
+            var date = new Date();
+            date.setDate(date.getDate() + expiredays);
+            document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+        }
+
+        function closePopup() {
+            if (result=='true') {
+                setCookie("popupYN", "N", 0);
+            }
+            self.close();
+        }
+
+        function getCheckboxValue(event) {
+            if (event.target.checked) {
+                result = 'true';
+            } else {
+                result = 'false';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        ★☆제 0회 헤네시스 달리기 대회☆★
+    </div>
+    <div style="margin-left: 19px;">
+        <br>일시 : 2021년 4월 15일
+        <br>장소 : 각 서버 헤네시스
+        <br>상금 : 0등 30억메소, 2등 15억메소, 3등 5억메소
+    </div>
+
+    <img src="/images/running.jpg" width="489px" height=" 400px">
+    <br>
+    <div style="text-align: right;">
+        <label><input type="checkbox" id="check" value="true" onclick='getCheckboxValue(event)'>하루동안 보지 않기</label>
+        <input type="button" onclick="closePopup();" value="확인">
+        <br />
+    </div>
+
+</body>
+
+</html>

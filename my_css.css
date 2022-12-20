@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+    /* 길이 계산을 편하게 하기위함. box-sizing에 관한 설명은 아래 링크를 참고해주세요 */
+}
+footer
+{
+    height: 10px;
+}
+body {
+    
+    margin: 0;
+    /* body의 기본마진을 없애줍니다(선택사항) */
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* 기본 밑줄을 제거합니다 */
+    color: #008;
+}
+
+a:hover {
+    text-decoration: underline;
+    /* 마우스 커서가 올라갔을 때 밑줄을 생성합니다*/
+}
+
+header {
+    /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    /* 하위 요소들 수직 가운데정렬 */
+    position: relative;
+}
+textarea{
+    resize: none;
+}
+fieldset {
+    border: none;
+    /* 기본 border 없애기(이 코드를 지우고 기본 border를 확인해보세요) */
+}
+
+.visually-hidden {
+    /* legend 안보이게 설정. 이렇게하면 접근성을 준수하면서 디자인을 해치지 않습니다. */
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.links {
+    /* 링크들을 상단 우측에 위치시킵니다. */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.link_text {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.img_logo {
+    margin-bottom: 12px;
+    width: 300;
+    height: 200px;
+}
+
+.search_box {
+    width: 520px;
+    height: 50px;
+
+    border: 2px solid #03cf5d;
+    display: flex;
+    align-items: center;
+
+}
+
+.search_box input {
+    flex: 9;
+    /* search-box내부에서 9만큼의 크기를 차지(비율) */
+    height: 46px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.search_box button {
+    flex: 1;
+    /* search-box내부에서 1만큼의 크기를 차지(비율) */
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: #03cf5d;
+    color: #ffffff;
+}
+
+/* nav */
+header>nav {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav_items {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 1px solid #f1f3f6;
+}
+
+.nav_items ul>li {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.nav_items ul>li:nth-child(-n + 7)>a {
+    padding: 10px;
+    /* <ul>하위 7번째 <li>까지 각각 내부의 <a> 태그 접근 */
+    color: #03cf5d;
+}
+
+.nav_items ul>li>a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main {
+    background: #f2f4f7;
+    min-height: 1200px;
+}
+
+
+
+/* 재사용 클래스 */
+.color_naver {
+    color: #03cf5d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 20px;
+}
+
+
+.board_list_wrap {
+    padding: 50px;
+}
+
+.board_list {
+    margin-left: 50px;
+    width: 90%;
+    border-top: 2px solid green;
+}
+
+.board_list tr,
+.innerTable tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list th,
+.board_list td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.board_list td {
+    text-align: center;
+}
+
+.board_list .tit {
+    text-align: left;
+}
+
+.board_list .tit:hover {
+    text-decoration: underline;
+}
+
+.board_list_wrap .paging {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+.board_list_wrap .paging a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+.board_list_wrap .paging a:first-child {
+    margin-left: 0;
+}
+
+.board_list_wrap .paging a.bt {
+    border: 1px solid #eee;
+    background: #eee;
+}
+
+.board_list_wrap .paging a.num {
+    border: 1px solid green;
+    font-weight: 600;
+    color: green;
+}
+
+.board_list_wrap .paging a.num.on {
+    background: green;
+    color: #fff;
+}
+
+
+.selectedList{
+    border-radius: 200px;
+    background: green;
+    color: #fff;
+}
+
+
+.container{
+    text-align: center;
+}
+
+.read{
+    vertical-align: middle;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.read td {
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.read tr{
+    border-bottom: 1px solid #ccc;
+}
+
+.read .date,
+.read .views{
+    text-align: right;
+}
+
+
+.read .title{
+    background: lightgreen;
+}
+.read .tit,
+.read .writer,
+.read .contents{
+    text-align: left;
+}
+
+.read .review
+{
+    font-size: 12px;
+    text-align: left;
+}
+
+.main_wrap
+{
+    width: 70%;
+    height: 100%;
+    float: left;
+    text-align:center;
+    
+    padding: 50px;
+}
+.main
+{
+    text-align: center;
+    margin-left: 50px;
+    width: 100%;
+    border: 2px solid green;
+}
+
+.innerTable{
+    width: 460px;
+    height: 500px;
+    border: 2px solid green;
+    text-align: center;
+    margin-bottom: 50px;
+    float: left;
+    margin: 10px;
+}
+
+.innerTable .tit{
+    text-align: left;
+    width: 340px;
+    max-width: 340px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.innerTable tr td{
+    width: 70px;
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.innerTable .img{
+    width: 250px;
+    max-width: 250px;
+}
+
+.innerTable .imgtit{
+    width: 200px;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.innerTable .images{
+    height:200px;
+    max-height: 200px;
+
+}
+
+.commentCount{
+    text-align: left;
+    border-bottom: 2px solid #03cf5d;
+}
+.commentTr{
+    border: 2px solid #03cf5d;
+}
